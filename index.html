@@ -163,6 +163,58 @@
       display: none;
     }
 
+    .comment-section {
+      margin-top: 40px;
+    }
+
+    .comment-section h4 {
+      margin-bottom: 10px;
+      color: #00796b;
+    }
+
+    #commentForm {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    #commentInput {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    #commentForm button {
+      align-self: flex-start;
+      background-color: #00796b;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #commentForm button:hover {
+      background-color: #004d40;
+    }
+
+    #commentList {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    #commentList li {
+      background-color: #f1f8e9;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      border-right: 4px solid #8bc34a;
+    }
+
     @media (max-width: 768px) {
       nav ul {
         flex-direction: column;
@@ -237,6 +289,16 @@
       <div class="card">
         <h3>قصص ملهمة</h3>
         <p>قصص حقيقية وتحفيزية تساعدك على التفكير الإيجابي والنهوض من جديد.</p>
+
+        <div class="comment-section">
+          <h4>شاركنا رأيك أو تعليقك</h4>
+          <form id="commentForm">
+            <textarea id="commentInput" placeholder="اكتب تعليقك هنا..." required></textarea>
+            <button type="submit">إرسال</button>
+          </form>
+          <ul id="commentList"></ul>
+        </div>
+
       </div>
     </div>
   </section>
@@ -268,7 +330,6 @@
       }
     });
 
-    // Highlight active nav link
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll("nav a");
 
@@ -283,6 +344,18 @@
         }
       });
     }
+
+    document.getElementById("commentForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const input = document.getElementById("commentInput");
+      const text = input.value.trim();
+      if (text) {
+        const li = document.createElement("li");
+        li.textContent = text;
+        document.getElementById("commentList").appendChild(li);
+        input.value = "";
+      }
+    });
   </script>
 </body>
 </html>
