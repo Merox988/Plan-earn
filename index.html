@@ -52,12 +52,16 @@
       color: white;
       text-decoration: none;
       font-size: 1.2em;
-      transition: color 0.3s;
+      transition: all 0.3s;
       cursor: pointer;
+      padding: 5px 10px;
+      border-radius: 6px;
     }
 
+    nav ul li a.active,
     nav ul li a:hover {
-      color: #fdd835;
+      background-color: #fdd835;
+      color: #333;
     }
 
     nav ul li ul {
@@ -150,7 +154,7 @@
       <ul>
         <li><a href="https://example.com/">القائمة الرئيسية</a></li>
         <li id="quotesMenu">
-          <a onclick="toggleMenu(event)">مقتبسات</a>
+          <a class="active" onclick="toggleMenu(event)">مقتبسات</a>
           <ul>
             <li><a href="https://example.com/quotes/motivational">تحفيزية</a></li>
             <li><a href="https://example.com/quotes/love">عن الحب</a></li>
@@ -168,25 +172,20 @@
     </nav>
   </header>
 
-  <section class="hero">
-    <h1>طاقة إيجابية</h1>
-    <p>
-      أهلاً بكم في عالم الإلهام والتحفيز. هنا تجدون اقتباسات مُلهمة وعبارات تحفّزكم للانطلاق نحو النجاح، إلى جانب قصص مؤثرة تترك في النفس أثراً طيباً، وتفتح أمامكم نوافذ الأمل والإيجابية.
-    </p>
-  </section>
-
   <div class="container">
-    <div class="card" onclick="location.href='https://example.com/quotes'">
+    <div class="card">
       <h3>الاقتباسات</h3>
       <p>مجموعة من الاقتباسات المختارة بعناية لتناسب كل الأذواق وتُلهمك في مختلف المواقف.</p>
-    </div>
-    <div class="card" onclick="location.href='https://example.com/stories'">
-      <h3>القصص</h3>
-      <p>قصص تحفيزية، واقعية، ومؤثرة تلامس مشاعرك وتدفعك للتأمل والتغيير.</p>
-    </div>
-    <div class="card" onclick="location.href='https://example.com/black-screen'">
-      <h3>مقتبسات شاشة سوداء</h3>
-      <p>اقتباسات بتصميم أنيق على خلفيات سوداء تناسب الاستخدام الفني والمشاركات الاجتماعية.</p>
+      <ul>
+        <li><a href="https://example.com/quotes/motivational">اقتباسات تحفيزية</a></li>
+        <li><a href="https://example.com/quotes/love">اقتباسات عن الحب</a></li>
+        <li><a href="https://example.com/quotes/life">اقتباسات عن الحياة</a></li>
+        <li><a href="https://example.com/quotes/success">اقتباسات عن النجاح</a></li>
+        <li><a href="https://example.com/quotes/hope">اقتباسات عن الأمل</a></li>
+        <li><a href="https://example.com/quotes/friendship">اقتباسات عن الصداقة</a></li>
+        <li><a href="https://example.com/quotes/patience">اقتباسات عن الصبر</a></li>
+        <li><a href="https://example.com/quotes/wisdom">اقتباسات عن الحكمة</a></li>
+      </ul>
     </div>
   </div>
 
@@ -205,6 +204,15 @@
       const menu = document.getElementById('quotesMenu');
       if (!menu.contains(e.target)) {
         menu.classList.remove('show');
+      }
+    });
+
+    // Highlight current page manually based on text or URL (if needed)
+    const links = document.querySelectorAll('nav ul li a');
+    links.forEach(link => {
+      if (link.classList.contains('active')) return;
+      if (window.location.href.includes(link.href)) {
+        link.classList.add('active');
       }
     });
   </script>
