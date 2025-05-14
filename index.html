@@ -4,8 +4,8 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>طاقة إيجابية</title>
   <style>
     * {
@@ -20,7 +20,6 @@
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      scroll-behavior: smooth;
     }
 
     header {
@@ -60,8 +59,6 @@
     nav ul li a:hover,
     nav ul li a.active {
       color: #fdd835;
-      border-bottom: 2px solid #fdd835;
-      padding-bottom: 4px;
     }
 
     nav ul li ul {
@@ -148,6 +145,14 @@
       color: #666;
     }
 
+    .quote-section {
+      display: none;
+    }
+
+    .quote-section.active {
+      display: block;
+    }
+
     @media (max-width: 768px) {
       nav ul {
         flex-direction: column;
@@ -169,53 +174,88 @@
   <header>
     <nav>
       <ul>
-        <li><a href="#hero" class="nav-link active">الرئيسية</a></li>
+        <li><a href="#">الرئيسية</a></li>
         <li id="quotesMenu">
           <a onclick="toggleMenu(event)">مقتبسات</a>
           <ul>
-            <li><a href="https://example.com/quotes/motivational">تحفيزية</a></li>
-            <li><a href="https://example.com/quotes/love">عن الحب</a></li>
-            <li><a href="https://example.com/quotes/life">عن الحياة</a></li>
-            <li><a href="https://example.com/quotes/success">عن النجاح</a></li>
-            <li><a href="https://example.com/quotes/hope">عن الأمل</a></li>
-            <li><a href="https://example.com/quotes/friendship">عن الصداقة</a></li>
-            <li><a href="https://example.com/quotes/patience">عن الصبر</a></li>
-            <li><a href="https://example.com/quotes/wisdom">عن الحكمة</a></li>
+            <li><a onclick="showSection('motivational')">تحفيزية</a></li>
+            <li><a onclick="showSection('love')">عن الحب</a></li>
+            <li><a onclick="showSection('life')">عن الحياة</a></li>
+            <li><a onclick="showSection('success')">عن النجاح</a></li>
+            <li><a onclick="showSection('hope')">عن الأمل</a></li>
+            <li><a onclick="showSection('friendship')">عن الصداقة</a></li>
+            <li><a onclick="showSection('patience')">عن الصبر</a></li>
+            <li><a onclick="showSection('wisdom')">عن الحكمة</a></li>
           </ul>
         </li>
-        <li><a href="#stories" class="nav-link">قصص</a></li>
+        <li><a href="https://example.com/stories">قصص</a></li>
         <li><a href="https://www.youtube.com/@%D9%85%D9%82%D8%AA%D8%A8%D8%B3%D8%A7%D8%AA.%D9%84%D8%AA%D8%B5%D9%85%D9%8A%D9%85">مقتبسات شاشة سوداء</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="hero" id="hero">
+  <section class="hero">
     <h1>طاقة إيجابية</h1>
     <p>
       أهلاً بكم في عالم الإلهام والتحفيز. هنا تجدون اقتباسات مُلهمة وعبارات تحفّزكم للانطلاق نحو النجاح، إلى جانب قصص مؤثرة تترك في النفس أثراً طيباً، وتفتح أمامكم نوافذ الأمل والإيجابية.
     </p>
   </section>
 
-  <div class="container" id="quotes">
-    <div class="card" onclick="location.href='https://example.com/quotes'">
-      <h3>الاقتباسات</h3>
-      <p>مجموعة من الاقتباسات المختارة بعناية لتناسب كل الأذواق وتُلهمك في مختلف المواقف.</p>
-    </div>
-  </div>
+  <section id="motivational" class="container quote-section active">
+    <h2>اقتباسات تحفيزية</h2>
+    <div class="card"><p>"ابدأ حيث أنت، واستخدم ما تملك، وافعل ما تستطيع."</p></div>
+    <div class="card"><p>"الطريق إلى النجاح يبدأ بخطوة، فلا تتردد."</p></div>
+    <div class="card"><p>"الإرادة تصنع المستحيل."</p></div>
+  </section>
 
-  <div class="container" id="stories">
-    <div class="card" onclick="location.href='https://example.com/stories'">
-      <h3>القصص</h3>
-      <p>قصص تحفيزية، واقعية، ومؤثرة تلامس مشاعرك وتدفعك للتأمل والتغيير.</p>
-    </div>
-  </div>
+  <section id="love" class="container quote-section">
+    <h2>اقتباسات عن الحب</h2>
+    <div class="card"><p>"الحب لا يُقال، بل يُشعر."</p></div>
+    <div class="card"><p>"أجمل ما في الحياة قلب يحبك بصدق."</p></div>
+    <div class="card"><p>"الحب هو أن ترى في طريقك ألف شخص ولا يعجبك إلا هو."</p></div>
+  </section>
 
-  <div class="container">
-    <div class="card" onclick="location.href='https://www.youtube.com/@%D9%85%D9%82%D8%AA%D8%A8%D8%B3%D8%A7%D8%AA.%D9%84%D8%AA%D8%B5%D9%85%D9%8A%D9%85'">
-      <h3>مقتبسات شاشة سوداء</h3>
-      <p>اقتباسات بتصميم أنيق على خلفيات سوداء تناسب الاستخدام الفني والمشاركات الاجتماعية.</p>
-    </div>
-  </div>
+  <section id="life" class="container quote-section">
+    <h2>اقتباسات عن الحياة</h2>
+    <div class="card"><p>"الحياة قصيرة، فلا تقضها في الحزن."</p></div>
+    <div class="card"><p>"تعلّم من الأمس، عش اليوم، وكن مستعدًا للغد."</p></div>
+    <div class="card"><p>"في كل تجربة درس، وفي كل لحظة فرصة."</p></div>
+  </section>
+
+  <section id="success" class="container quote-section">
+    <h2>اقتباسات عن النجاح</h2>
+    <div class="card"><p>"النجاح لا يأتي صدفة، بل هو نتيجة للعمل الجاد."</p></div>
+    <div class="card"><p>"الناجحون لا ينتظرون الفرص، بل يصنعونها."</p></div>
+    <div class="card"><p>"الفشل طريق النجاح، إذا تعلّمت منه."</p></div>
+  </section>
+
+  <section id="hope" class="container quote-section">
+    <h2>اقتباسات عن الأمل</h2>
+    <div class="card"><p>"دائماً هناك ضوء في نهاية النفق."</p></div>
+    <div class="card"><p>"الأمل هو الوقود الذي يُبقيك صامدًا."</p></div>
+    <div class="card"><p>"لا تفقد الأمل، فالأشياء الجميلة تحتاج للصبر."</p></div>
+  </section>
+
+  <section id="friendship" class="container quote-section">
+    <h2>اقتباسات عن الصداقة</h2>
+    <div class="card"><p>"الصديق الحقيقي هو من يفهمك دون أن تتكلم."</p></div>
+    <div class="card"><p>"الصداقة ليست بطول السنين بل بصدق المواقف."</p></div>
+    <div class="card"><p>"الصديق نعمة لا تُقدّر بثمن."</p></div>
+  </section>
+
+  <section id="patience" class="container quote-section">
+    <h2>اقتباسات عن الصبر</h2>
+    <div class="card"><p>"الصبر عند الصدمة الأولى."</p></div>
+    <div class="card"><p>"اصبر، فكل تأخيرة فيها خيرة."</p></div>
+    <div class="card"><p>"من صبر ظفر."</p></div>
+  </section>
+
+  <section id="wisdom" class="container quote-section">
+    <h2>اقتباسات عن الحكمة</h2>
+    <div class="card"><p>"ليس الذكاء أن تعرف كل شيء، بل أن تستخدم ما تعرفه بحكمة."</p></div>
+    <div class="card"><p>"العاقل لا يُخدع مرتين."</p></div>
+    <div class="card"><p>"الحكمة ضالة المؤمن."</p></div>
+  </section>
 
   <footer>
     &copy; 2025 طاقة إيجابية - جميع الحقوق محفوظة
@@ -228,32 +268,26 @@
       menu.classList.toggle('show');
     }
 
-    window.addEventListener('click', function(e) {
+    window.addEventListener('click', function (e) {
       const menu = document.getElementById('quotesMenu');
       if (!menu.contains(e.target)) {
         menu.classList.remove('show');
       }
     });
 
-    // تحديد العنصر النشط بالنقر
-    const navLinks = document.querySelectorAll('a.nav-link');
-    navLinks.forEach(link => {
-      link.addEventListener('click', function () {
-        navLinks.forEach(l => l.classList.remove('active'));
-        this.classList.add('active');
-      });
-    });
+    function showSection(id) {
+      const sections = document.querySelectorAll('.quote-section');
+      sections.forEach(section => section.classList.remove('active'));
+      const target = document.getElementById(id);
+      if (target) {
+        target.classList.add('active');
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+      document.getElementById('quotesMenu').classList.remove('show');
+    }
 
-    // تمييز الرابط أثناء التمرير
-    window.addEventListener('scroll', () => {
-      const scrollPos = window.scrollY;
-      navLinks.forEach(link => {
-        const section = document.querySelector(link.getAttribute('href'));
-        if (section && section.offsetTop <= scrollPos + 60 && section.offsetTop + section.offsetHeight > scrollPos + 60) {
-          navLinks.forEach(l => l.classList.remove('active'));
-          link.classList.add('active');
-        }
-      });
+    window.addEventListener('DOMContentLoaded', () => {
+      showSection('motivational');
     });
   </script>
 </body>
