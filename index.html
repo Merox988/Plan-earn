@@ -61,7 +61,7 @@
     }
 
     nav ul li.active a {
-      color: #fdd835;
+      color: #fdd835; /* اللون النشط */
     }
 
     nav ul li ul {
@@ -173,18 +173,18 @@
         <li id="quotesMenu">
           <a onclick="toggleMenu(event)">مقتبسات</a>
           <ul>
-            <li><a href="#motivationalSection">تحفيزية</a></li>
-            <li><a href="https://example.com/quotes/love">عن الحب</a></li> <!-- رابط خارجي -->
-            <li><a href="#lifeSection">عن الحياة</a></li>
-            <li><a href="https://example.com/quotes/success">عن النجاح</a></li> <!-- رابط خارجي -->
-            <li><a href="#hopeSection">عن الأمل</a></li>
-            <li><a href="#friendshipSection">عن الصداقة</a></li>
-            <li><a href="#patienceSection">عن الصبر</a></li>
-            <li><a href="#wisdomSection">عن الحكمة</a></li>
+            <li><a href="https://example.com/quotes/motivational">تحفيزية</a></li>
+            <li><a href="https://example.com/quotes/love">عن الحب</a></li>
+            <li><a href="https://example.com/quotes/life">عن الحياة</a></li>
+            <li><a href="https://example.com/quotes/success">عن النجاح</a></li>
+            <li><a href="https://example.com/quotes/hope">عن الأمل</a></li>
+            <li><a href="https://example.com/quotes/friendship">عن الصداقة</a></li>
+            <li><a href="https://example.com/quotes/patience">عن الصبر</a></li>
+            <li><a href="https://example.com/quotes/wisdom">عن الحكمة</a></li>
           </ul>
         </li>
         <li><a href="https://example.com/stories">قصص</a></li>
-        <li><a href="https://www.youtube.com/@%D9%85%D9%82%D8%AA%D8%A8%D8%B3%D8%A7%D8%AA.%D9%84%D8%AA%D8%B5%D9%85%D9%8A%D9%85">مقتبسات شاشة سوداء</a></li>
+        <li><a href="https://www.youtube.com/@%D9%85%D9%82%D8%AA%D8%A8%D8%B3%D8%A7%D9%84%D8%A7%D8%AA.%D9%84%D8%AA%D8%B5%D9%85%D9%8A%D9%85">مقتبسات شاشة سوداء</a></li>
       </ul>
     </nav>
   </header>
@@ -196,39 +196,18 @@
     </p>
   </section>
 
-  <!-- أقسام التنقل الداخلية -->
-  <div id="motivationalSection" class="container">
-    <div class="card">
-      <h3>الاقتباسات التحفيزية</h3>
-      <p>مجموعة من الاقتباسات التي تلهمك للعمل نحو النجاح.</p>
+  <div class="container">
+    <div class="card" onclick="location.href='https://example.com/quotes'">
+      <h3>الاقتباسات</h3>
+      <p>مجموعة من الاقتباسات المختارة بعناية لتناسب كل الأذواق وتُلهمك في مختلف المواقف.</p>
     </div>
-  </div>
-
-  <div id="lifeSection" class="container">
-    <div class="card">
-      <h3>عن الحياة</h3>
-      <p>اقتباسات تحفزك على تقدير الحياة بشكل أعمق.</p>
+    <div class="card" onclick="location.href='https://example.com/stories'">
+      <h3>القصص</h3>
+      <p>قصص تحفيزية، واقعية، ومؤثرة تلامس مشاعرك وتدفعك للتأمل والتغيير.</p>
     </div>
-  </div>
-
-  <div id="hopeSection" class="container">
-    <div class="card">
-      <h3>عن الأمل</h3>
-      <p>عبارات تحفزك على الأمل مهما كانت الظروف.</p>
-    </div>
-  </div>
-
-  <div id="friendshipSection" class="container">
-    <div class="card">
-      <h3>عن الصداقة</h3>
-      <p>اقتباسات حول أهمية الصداقة في حياتنا.</p>
-    </div>
-  </div>
-
-  <div id="patienceSection" class="container">
-    <div class="card">
-      <h3>عن الصبر</h3>
-      <p>عبارات تعلمك كيفية التحمل والصبر في مواجهة التحديات.</p>
+    <div class="card" onclick="location.href='https://www.youtube.com/@%D9%85%D9%82%D8%AA%D8%A8%D8%B3%D8%A7%D9%84%D8%A7%D8%AA.%D9%84%D8%AA%D8%B5%D9%85%D9%8A%D9%85'">
+      <h3>مقتبسات شاشة سوداء</h3>
+      <p>اقتباسات بتصميم أنيق على خلفيات سوداء تناسب الاستخدام الفني والمشاركات الاجتماعية.</p>
     </div>
   </div>
 
@@ -250,14 +229,13 @@
       }
     });
 
-    // إضافة الحدث لتغيير اللون عند النقر
-    const menuLinks = document.querySelectorAll('nav ul li a');
-    menuLinks.forEach(link => {
-      link.addEventListener('click', function() {
-        // إزالة الصنف "active" من جميع العناصر
-        menuLinks.forEach(link => link.parentElement.classList.remove('active'));
-        // إضافة الصنف "active" للعناصر التي تم النقر عليها
-        this.parentElement.classList.add('active');
+    // تغيير اللون للعنصر النشط
+    const menuItems = document.querySelectorAll('nav ul li a');
+
+    menuItems.forEach(item => {
+      item.addEventListener('click', function() {
+        menuItems.forEach(link => link.parentElement.classList.remove('active'));
+        item.parentElement.classList.add('active');
       });
     });
   </script>
