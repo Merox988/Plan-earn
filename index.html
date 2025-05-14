@@ -105,7 +105,7 @@
     .hero h1 {
       font-size: 3.2em;
       margin-bottom: 20px;
-      color: #f57c00; /* لون مناسب لعناصر العنوان */
+      color: #f57c00;
       font-weight: bold;
     }
 
@@ -120,55 +120,11 @@
     section {
       padding: 60px 30px;
       text-align: center;
+      display: none; /* إخفاء جميع الأقسام بشكل افتراضي */
     }
 
-    .card-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
-    }
-
-    .card {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      width: 280px;
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-    }
-
-    .card h3 {
-      color: #00796b;
-      font-size: 1.5em;
-      margin-bottom: 15px;
-    }
-
-    .card p {
-      font-size: 1.1em;
-      color: #444;
-    }
-
-    .card a {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
-      background-color: #ff9800;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-
-    .card a:hover {
-      background-color: #f57c00;
+    section.active {
+      display: block; /* إظهار القسم النشط */
     }
 
     footer {
@@ -182,36 +138,35 @@
     footer p {
       font-size: 1.2em;
     }
-
   </style>
 </head>
 <body>
   <header>
     <nav>
       <ul>
-        <li><a href="#home" onclick="setActive(this)">الرئيسية</a></li>
+        <li><a href="#home" onclick="showSection('home'); setActive(this)">الرئيسية</a></li>
         <li id="quotesMenu">
           <a href="#quotes" onclick="toggleMenu(event); setActive(this)">مقتبسات</a>
           <ul>
-            <li><a href="https://example.com/quotes/motivational">تحفيزية</a></li>
-            <li><a href="https://example.com/quotes/love">عن الحب</a></li>
-            <li><a href="https://example.com/quotes/life">عن الحياة</a></li>
-            <li><a href="https://example.com/quotes/success">عن النجاح</a></li>
-            <li><a href="https://example.com/quotes/hope">عن الأمل</a></li>
-            <li><a href="https://example.com/quotes/friendship">عن الصداقة</a></li>
-            <li><a href="https://example.com/quotes/patience">عن الصبر</a></li>
-            <li><a href="https://example.com/quotes/wisdom">عن الحكمة</a></li>
+            <li><a href="https://example.com/quotes/motivational" onclick="showSection('quotes')">تحفيزية</a></li>
+            <li><a href="https://example.com/quotes/love" onclick="showSection('quotes')">عن الحب</a></li>
+            <li><a href="https://example.com/quotes/life" onclick="showSection('quotes')">عن الحياة</a></li>
+            <li><a href="https://example.com/quotes/success" onclick="showSection('quotes')">عن النجاح</a></li>
+            <li><a href="https://example.com/quotes/hope" onclick="showSection('quotes')">عن الأمل</a></li>
+            <li><a href="https://example.com/quotes/friendship" onclick="showSection('quotes')">عن الصداقة</a></li>
+            <li><a href="https://example.com/quotes/patience" onclick="showSection('quotes')">عن الصبر</a></li>
+            <li><a href="https://example.com/quotes/wisdom" onclick="showSection('quotes')">عن الحكمة</a></li>
           </ul>
         </li>
-        <li><a href="#sayings" onclick="setActive(this)">أقوال</a></li>
-        <li><a href="#wisdom" onclick="setActive(this)">حكم</a></li>
+        <li><a href="#sayings" onclick="showSection('sayings'); setActive(this)">أقوال</a></li>
+        <li><a href="#wisdom" onclick="showSection('wisdom'); setActive(this)">حكم</a></li>
         <li><a href="https://example.com/stories">قصص</a></li>
         <li><a href="https://www.youtube.com/@%D9%85%D9%82%D8%AA%D8%A8%D8%B3%D8%A7%D8%AA.%D9%84%D8%AA%D8%B5%D9%85%D9%8A%D9%85">مقتبسات شاشة سوداء</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="hero" id="home">
+  <section id="home" class="active">
     <h1>طاقة إيجابية</h1>
     <p>
       أهلاً بكم في "طاقة إيجابية" — منصتكم للإلهام اليومي، حيث تجدون مقتبسات راقية، أقوال مؤثرة، قصص واقعية، وحكم جاهزة للتصميم تُنير دربكم وتُحفزكم نحو الأفضل. نمنحكم محتوى يصنع الفرق.
@@ -220,34 +175,12 @@
 
   <section id="quotes">
     <h2>مقتبسات</h2>
-    <div class="card-container">
-      <div class="card">
-        <h3>تحفيزية</h3>
-        <p>مقتبسات تحفيزية تمنحك القوة والشجاعة لتحقيق أهدافك.</p>
-        <a href="https://example.com/quotes/motivational">اكتشف المزيد</a>
-      </div>
-      <div class="card">
-        <h3>عن الحب</h3>
-        <p>مقتبسات عن الحب تلامس قلوبنا وتعبر عن أعمق المشاعر.</p>
-        <a href="https://example.com/quotes/love">اكتشف المزيد</a>
-      </div>
-      <div class="card">
-        <h3>عن الحياة</h3>
-        <p>مقتبسات تلهمك للنظر إلى الحياة من زاوية أمل وإيجابية.</p>
-        <a href="https://example.com/quotes/life">اكتشف المزيد</a>
-      </div>
-    </div>
+    <p>مجموعة من الاقتباسات الملهمة لتجدد طاقتك وتعزز من نظرتك الإيجابية للحياة.</p>
   </section>
 
   <section id="sayings">
     <h2>أقوال</h2>
-    <div class="card-container">
-      <div class="card">
-        <h3>حكمة</h3>
-        <p>أقوال مأثورة من حكماء التاريخ تلهمك بالحكمة في كل موقف.</p>
-        <a href="#wisdom">اكتشف المزيد</a>
-      </div>
-    </div>
+    <p>أقوال من عظماء وأدباء تساعدك على الفهم العميق والتأمل.</p>
   </section>
 
   <section id="wisdom">
@@ -270,6 +203,15 @@
       event.preventDefault();
       const menu = document.getElementById('quotesMenu');
       menu.classList.toggle('show');
+    }
+
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => section.classList.remove('active'));
+      const activeSection = document.getElementById(sectionId);
+      if (activeSection) {
+        activeSection.classList.add('active');
+      }
     }
 
     window.addEventListener('click', function(e) {
