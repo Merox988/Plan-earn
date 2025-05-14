@@ -4,8 +4,8 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>طاقة إيجابية</title>
   <style>
     * {
@@ -52,16 +52,19 @@
       color: white;
       text-decoration: none;
       font-size: 1.2em;
-      transition: color 0.3s;
+      transition: color 0.3s, background-color 0.3s;
       cursor: pointer;
+      padding: 5px 10px;
+      border-radius: 5px;
     }
 
     nav ul li a:hover {
       color: #fdd835;
     }
 
-    nav ul li.active a {
-      color: #fdd835; /* اللون النشط */
+    nav ul li a.active {
+      background-color: #ff9800;
+      color: white;
     }
 
     nav ul li ul {
@@ -79,99 +82,15 @@
     nav ul li.show ul {
       display: block;
     }
-
-    nav ul li ul li {
-      margin: 5px 0;
-    }
-
-    nav ul li ul li a {
-      color: white;
-      font-size: 0.95em;
-    }
-
-    nav ul li ul li a:hover {
-      color: #ffd600;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 60px 20px 40px;
-      background: linear-gradient(to right, #fdfcfb, #e2d1c3);
-    }
-
-    .hero h1 {
-      font-size: 3.2em;
-      margin-bottom: 20px;
-      color: #ff5722;
-      font-weight: bold;
-    }
-
-    .hero p {
-      font-size: 1.3em;
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.8;
-      color: #444;
-    }
-
-    .container {
-      flex: 1;
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .card {
-      background-color: #fff;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s;
-      cursor: pointer;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card h3 {
-      margin-top: 0;
-      color: #00796b;
-    }
-
-    footer {
-      background: #eee;
-      padding: 20px;
-      text-align: center;
-      font-size: 0.9em;
-      color: #666;
-    }
-
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 15px;
-      }
-
-      nav ul li {
-        margin: 10px 0;
-      }
-
-      nav ul li ul {
-        position: static;
-      }
-    }
   </style>
 </head>
 <body>
   <header>
     <nav>
       <ul>
-        <li><a href="#">الرئيسية</a></li>
+        <li><a href="#" onclick="setActive(this)">الرئيسية</a></li>
         <li id="quotesMenu">
-          <a onclick="toggleMenu(event)">مقتبسات</a>
+          <a onclick="toggleMenu(event); setActive(this)">مقتبسات</a>
           <ul>
             <li><a href="https://example.com/quotes/motivational">تحفيزية</a></li>
             <li><a href="https://example.com/quotes/love">عن الحب</a></li>
@@ -184,36 +103,10 @@
           </ul>
         </li>
         <li><a href="https://example.com/stories">قصص</a></li>
-        <li><a href="https://www.youtube.com/@%D9%85%D9%82%D8%AA%D8%A8%D8%B3%D8%A7%D9%84%D8%A7%D8%AA.%D9%84%D8%AA%D8%B5%D9%85%D9%8A%D9%85">مقتبسات شاشة سوداء</a></li>
+        <li><a href="https://www.youtube.com/@%D9%85%D9%82%D8%AA%D8%A8%D8%B3%D8%A7%D8%AA.%D9%84%D8%AA%D8%B5%D9%85%D9%8A%D9%85">مقتبسات شاشة سوداء</a></li>
       </ul>
     </nav>
   </header>
-
-  <section class="hero">
-    <h1>طاقة إيجابية</h1>
-    <p>
-      أهلاً بكم في عالم الإلهام والتحفيز. هنا تجدون اقتباسات مُلهمة وعبارات تحفّزكم للانطلاق نحو النجاح، إلى جانب قصص مؤثرة تترك في النفس أثراً طيباً، وتفتح أمامكم نوافذ الأمل والإيجابية.
-    </p>
-  </section>
-
-  <div class="container">
-    <div class="card" onclick="location.href='https://example.com/quotes'">
-      <h3>الاقتباسات</h3>
-      <p>مجموعة من الاقتباسات المختارة بعناية لتناسب كل الأذواق وتُلهمك في مختلف المواقف.</p>
-    </div>
-    <div class="card" onclick="location.href='https://example.com/stories'">
-      <h3>القصص</h3>
-      <p>قصص تحفيزية، واقعية، ومؤثرة تلامس مشاعرك وتدفعك للتأمل والتغيير.</p>
-    </div>
-    <div class="card" onclick="location.href='https://www.youtube.com/@%D9%85%D9%82%D8%AA%D8%A8%D8%B3%D8%A7%D9%84%D8%A7%D8%AA.%D9%84%D8%AA%D8%B5%D9%85%D9%8A%D9%85'">
-      <h3>مقتبسات شاشة سوداء</h3>
-      <p>اقتباسات بتصميم أنيق على خلفيات سوداء تناسب الاستخدام الفني والمشاركات الاجتماعية.</p>
-    </div>
-  </div>
-
-  <footer>
-    &copy; 2025 طاقة إيجابية - جميع الحقوق محفوظة
-  </footer>
 
   <script>
     function toggleMenu(event) {
@@ -222,21 +115,17 @@
       menu.classList.toggle('show');
     }
 
-    window.addEventListener('click', function(e) {
+    function setActive(el) {
+      const links = document.querySelectorAll('nav ul li a');
+      links.forEach(link => link.classList.remove('active'));
+      el.classList.add('active');
+    }
+
+    window.addEventListener('click', function (e) {
       const menu = document.getElementById('quotesMenu');
       if (!menu.contains(e.target)) {
         menu.classList.remove('show');
       }
-    });
-
-    // تغيير اللون للعنصر النشط
-    const menuItems = document.querySelectorAll('nav ul li a');
-
-    menuItems.forEach(item => {
-      item.addEventListener('click', function() {
-        menuItems.forEach(link => link.parentElement.classList.remove('active'));
-        item.parentElement.classList.add('active');
-      });
     });
   </script>
 </body>
