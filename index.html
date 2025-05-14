@@ -20,6 +20,7 @@
       display: flex;
       flex-direction: column;
       min-height: 100vh;
+      scroll-behavior: smooth;
     }
 
     header {
@@ -56,17 +57,11 @@
       cursor: pointer;
     }
 
-    nav ul li a:hover {
-      color: #fdd835; /* تغيير اللون عند المرور بالماوس */
-    }
-
-    nav ul li a:active {
-      color: #ff5722; /* تغيير اللون عند النقر */
-    }
-
+    nav ul li a:hover,
     nav ul li a.active {
-      color: #fdd835; /* تغيير اللون عندما يكون العنصر النشط */
-      font-weight: bold; /* إضافة تأثير جعل النص غامق */
+      color: #fdd835;
+      border-bottom: 2px solid #fdd835;
+      padding-bottom: 4px;
     }
 
     nav ul li ul {
@@ -174,9 +169,9 @@
   <header>
     <nav>
       <ul>
-        <li><a href="#" class="active">الرئيسية</a></li>
+        <li><a href="#hero" class="nav-link active">الرئيسية</a></li>
         <li id="quotesMenu">
-          <a href="#" onclick="toggleMenu(event)">مقتبسات</a>
+          <a onclick="toggleMenu(event)">مقتبسات</a>
           <ul>
             <li><a href="https://example.com/quotes/motivational">تحفيزية</a></li>
             <li><a href="https://example.com/quotes/love">عن الحب</a></li>
@@ -188,28 +183,34 @@
             <li><a href="https://example.com/quotes/wisdom">عن الحكمة</a></li>
           </ul>
         </li>
-        <li><a href="https://example.com/stories">قصص</a></li>
+        <li><a href="#stories" class="nav-link">قصص</a></li>
         <li><a href="https://www.youtube.com/@%D9%85%D9%82%D8%AA%D8%A8%D8%B3%D8%A7%D8%AA.%D9%84%D8%AA%D8%B5%D9%85%D9%8A%D9%85">مقتبسات شاشة سوداء</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="hero">
+  <section class="hero" id="hero">
     <h1>طاقة إيجابية</h1>
     <p>
       أهلاً بكم في عالم الإلهام والتحفيز. هنا تجدون اقتباسات مُلهمة وعبارات تحفّزكم للانطلاق نحو النجاح، إلى جانب قصص مؤثرة تترك في النفس أثراً طيباً، وتفتح أمامكم نوافذ الأمل والإيجابية.
     </p>
   </section>
 
-  <div class="container">
+  <div class="container" id="quotes">
     <div class="card" onclick="location.href='https://example.com/quotes'">
       <h3>الاقتباسات</h3>
       <p>مجموعة من الاقتباسات المختارة بعناية لتناسب كل الأذواق وتُلهمك في مختلف المواقف.</p>
     </div>
+  </div>
+
+  <div class="container" id="stories">
     <div class="card" onclick="location.href='https://example.com/stories'">
       <h3>القصص</h3>
       <p>قصص تحفيزية، واقعية، ومؤثرة تلامس مشاعرك وتدفعك للتأمل والتغيير.</p>
     </div>
+  </div>
+
+  <div class="container">
     <div class="card" onclick="location.href='https://www.youtube.com/@%D9%85%D9%82%D8%AA%D8%A8%D8%B3%D8%A7%D8%AA.%D9%84%D8%AA%D8%B5%D9%85%D9%8A%D9%85'">
       <h3>مقتبسات شاشة سوداء</h3>
       <p>اقتباسات بتصميم أنيق على خلفيات سوداء تناسب الاستخدام الفني والمشاركات الاجتماعية.</p>
@@ -221,19 +222,38 @@
   </footer>
 
   <script>
-    // تفعيل العنصر النشط بناءً على التفاعل
-    function setActiveLink(event) {
-      const links = document.querySelectorAll('nav ul li a');
-      links.forEach(link => {
-        link.classList.remove('active');
-      });
-      const currentLink = event.target;
-      currentLink.classList.add('active');
+    function toggleMenu(event) {
+      event.preventDefault();
+      const menu = document.getElementById('quotesMenu');
+      menu.classList.toggle('show');
     }
 
-    // إضافة مستمعين للأحداث
-    document.querySelectorAll('nav ul li a').forEach(link => {
-      link.addEventListener('click', setActiveLink);
+    window.addEventListener('click', function(e) {
+      const menu = document.getElementById('quotesMenu');
+      if (!menu.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    });
+
+    // تحديد العنصر النشط بالنقر
+    const navLinks = document.querySelectorAll('a.nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+
+    // تمييز الرابط أثناء التمرير
+    window.addEventListener('scroll', () => {
+      const scrollPos = window.scrollY;
+      navLinks.forEach(link => {
+        const section = document.querySelector(link.getAttribute('href'));
+        if (section && section.offsetTop <= scrollPos + 60 && section.offsetTop + section.offsetHeight > scrollPos + 60) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+        }
+      });
     });
   </script>
 </body>
