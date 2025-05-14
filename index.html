@@ -1,152 +1,212 @@
-
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6725783366360520"
+     crossorigin="anonymous"></script>
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مدونة الربح من الإنترنت</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Cairo', sans-serif;
-            background-color: #f0f2f5;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background: linear-gradient(90deg, #00c6ff, #0072ff);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        header p {
-            margin-top: 10px;
-            font-size: 1.2em;
-        }
-        nav {
-            background-color: #ffffff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            text-align: center;
-            padding: 10px 0;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #0072ff;
-            font-weight: bold;
-        }
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 30px 20px;
-        }
-        article {
-            background-color: white;
-            padding: 25px;
-            margin-bottom: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-        }
-        article h2 {
-            color: #0072ff;
-        }
-        article ul {
-            padding-right: 20px;
-        }
-        article ul li {
-            margin-bottom: 10px;
-        }
-        .tiktok-video {
-            margin-top: 20px;
-            text-align: center;
-        }
-        iframe {
-            border-radius: 10px;
-            width: 100%;
-            max-width: 400px;
-            height: 600px;
-            border: none;
-        }
-        footer {
-            background-color: #333;
-            color: #ccc;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>طاقة إيجابية</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #fffbea, #e0f7fa);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    nav {
+      background-color: #333;
+      width: 100%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: flex-start;
+      list-style: none;
+      padding: 15px 30px;
+      margin: 0;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+      position: relative;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+      transition: color 0.3s;
+      cursor: pointer;
+    }
+
+    nav ul li a:hover {
+      color: #fdd835;
+    }
+
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      background-color: #444;
+      padding: 10px;
+      list-style: none;
+      margin-top: 10px;
+      border-radius: 8px;
+      min-width: 200px;
+      right: 0;
+    }
+
+    nav ul li.show ul {
+      display: block;
+    }
+
+    nav ul li ul li {
+      margin: 5px 0;
+    }
+
+    nav ul li ul li a {
+      color: white;
+      font-size: 0.95em;
+    }
+
+    nav ul li ul li a:hover {
+      color: #ffd600;
+    }
+
+    .hero {
+      display: none;
+    }
+
+    .container {
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #00796b;
+    }
+
+    footer {
+      background: #eee;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+
+      nav ul li ul {
+        position: static;
+      }
+    }
+  </style>
 </head>
 <body>
-
-    <header>
-        <h1>مدونة الربح من الإنترنت</h1>
-        <p>اكتشف طرق الربح من الإنترنت مع التركيز على TikTok والمنصات الأخرى</p>
-    </header>
-
+  <header>
     <nav>
-        <a href="#tiktok">تيك توك</a><script>
-    document.addEventListener("click", function () {
-        window.location.href = ""; // غيّر الرابط إلى الوجهة التي تريدها
-    });https://support.tiktok.com/ar/business-and-creator/video-gifts-on-tiktok/video-gifts-on-tiktok
-</script>
-
-        <a href="#affiliate">العمولة</a><script>
-    document.addEventListener("click", function () {
-        window.location.href = "https://ads.tiktok.com/business/en?tt4b_lang_redirect=1"; // غيّر الرابط إلى الوجهة التي تريدها
-    });; // غيّر الرابط إلى الوجهة التي تريدها
-    });
-</script>
-
-        <a href="#freelancing">العمل الحر</a>
-        <a href="#ads">الإعلانات</a>
+      <ul>
+        <li><a href="https://example.com/">القائمة الرئيسية</a></li>
+        <li id="quotesMenu">
+          <a onclick="toggleMenu(event)">مقتبسات</a>
+          <ul>
+            <li><a href="https://example.com/quotes/motivational">تحفيزية</a></li>
+            <li><a href="https://example.com/quotes/love">عن الحب</a></li>
+            <li><a href="https://example.com/quotes/life">عن الحياة</a></li>
+            <li><a href="https://example.com/quotes/success">عن النجاح</a></li>
+            <li><a href="https://example.com/quotes/hope">عن الأمل</a></li>
+            <li><a href="https://example.com/quotes/friendship">عن الصداقة</a></li>
+            <li><a href="https://example.com/quotes/patience">عن الصبر</a></li>
+            <li><a href="https://example.com/quotes/wisdom">عن الحكمة</a></li>
+          </ul>
+        </li>
+        <li><a href="https://example.com/stories">قصص</a></li>
+        <li><a href="https://example.com/black-screen">مقتبسات شاشة سوداء</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <div class="container">
-        <article id="tiktok">
-            <h2>الربح من تيك توك</h2>
-            <p>الربح من TikTok أصبح من أكثر الطرق شيوعاً في السنوات الأخيرة. بعض الطرق تشمل:</p>
-            <ul>
-                <li>البث المباشر والحصول على الهدايا.</li>
-                <script>
-    document.addEventListener("click", function () {
-        window.location.href = "https://support.tiktok.com/ar/business-and-creator/video-gifts-on-tiktok/video-gifts-on-tiktok"; // غيّر الرابط إلى الوجهة التي تريدها
-    });
-</script>
+  <section class="hero">
+    <h1>طاقة إيجابية</h1>
+    <p>
+      أهلاً بكم في عالم الإلهام والتحفيز. هنا تجدون اقتباسات مُلهمة وعبارات تحفّزكم للانطلاق نحو النجاح، إلى جانب قصص مؤثرة تترك في النفس أثراً طيباً، وتفتح أمامكم نوافذ الأمل والإيجابية.
+    </p>
+  </section>
 
-                <li>التسويق بالعمولة من خلال روابط المنتجات.</li>
-                <li>الترويج لمنتجاتك الخاصة.</li>
-                <li>الانضمام لبرنامج TikTok Creator Fund.</li>
-            </ul>
-
-            <div class="tiktok-video">
-                <h3>مثال على محتوى TikTok:</h3>
-                <iframe src="https://www.tiktok.com/embed/7275545090667883802" allowfullscreen></iframe>
-            </div>
-        </article>
-
-        <article id="affiliate">
-            <h2>التسويق بالعمولة</h2>
-            <p>من خلال الانضمام إلى شبكات مثل Amazon أو Digistore أو CJ Affiliate يمكنك كسب عمولات على المبيعات.</p>
-        </article>
-
-        <article id="freelancing">
-            <h2>العمل الحر (Freelancing)</h2>
-            <p>العمل الحر متاح عبر منصات مثل خمسات، مستقل، Fiverr وUpwork. اختر مهارة مثل التصميم أو البرمجة أو الكتابة.</p>
-        </article>
-
-        <article id="ads">
-            <h2>الإعلانات والمدونات</h2>
-            <p>يمكنك إنشاء موقع أو مدونة والربح من الإعلانات عبر Google AdSense أو رعاية المحتوى.</p>
-        </article>
+  <div class="container">
+    <div class="card" onclick="location.href='https://example.com/quotes'">
+      <h3>الاقتباسات</h3>
+      <p>مجموعة من الاقتباسات المختارة بعناية لتناسب كل الأذواق وتُلهمك في مختلف المواقف.</p>
     </div>
+    <div class="card" onclick="location.href='https://example.com/stories'">
+      <h3>القصص</h3>
+      <p>قصص تحفيزية، واقعية، ومؤثرة تلامس مشاعرك وتدفعك للتأمل والتغيير.</p>
+    </div>
+    <div class="card" onclick="location.href='https://example.com/black-screen'">
+      <h3>مقتبسات شاشة سوداء</h3>
+      <p>اقتباسات بتصميم أنيق على خلفيات سوداء تناسب الاستخدام الفني والمشاركات الاجتماعية.</p>
+    </div>
+  </div>
 
-    <footer>
-        <p>جميع الحقوق محفوظة © 2025 - مدونة الربح من الإنترنت</p>
-    </footer>
+  <footer>
+    &copy; 2025 طاقة إيجابية - جميع الحقوق محفوظة
+  </footer>
 
+  <script>
+    function toggleMenu(event) {
+      event.preventDefault();
+      const menu = document.getElementById('quotesMenu');
+      menu.classList.toggle('show');
+    }
+
+    window.addEventListener('click', function(e) {
+      const menu = document.getElementById('quotesMenu');
+      if (!menu.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    });
+  </script>
 </body>
 </html>
