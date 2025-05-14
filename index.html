@@ -37,7 +37,7 @@
 
     nav ul {
       display: flex;
-      justify-content: flex-start;
+      justify-content: flex-end;
       list-style: none;
       padding: 15px 30px;
       margin: 0;
@@ -93,10 +93,6 @@
       color: #ffd600;
     }
 
-    .hero {
-      display: none;
-    }
-
     .container {
       flex: 1;
       padding: 40px;
@@ -131,10 +127,46 @@
       color: #666;
     }
 
+    section {
+      padding: 40px 20px;
+    }
+
+    section:not(:target) {
+      display: none;
+    }
+
+    section:target {
+      display: block;
+    }
+
+    #home:target ~ #quotes,
+    #home:target ~ #stories,
+    #home:target ~ #black {
+      display: none;
+    }
+
+    #quotes:target ~ #home,
+    #quotes:target ~ #stories,
+    #quotes:target ~ #black {
+      display: none;
+    }
+
+    #stories:target ~ #home,
+    #stories:target ~ #quotes,
+    #stories:target ~ #black {
+      display: none;
+    }
+
+    #black:target ~ #home,
+    #black:target ~ #quotes,
+    #black:target ~ #stories {
+      display: none;
+    }
+
     @media (max-width: 768px) {
       nav ul {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: flex-end;
         padding: 15px;
       }
 
@@ -152,9 +184,9 @@
   <header>
     <nav>
       <ul>
-        <li><a href="https://example.com/">القائمة الرئيسية</a></li>
+        <li><a href="#home" class="active">القائمة الرئيسية</a></li>
         <li id="quotesMenu">
-          <a class="active" onclick="toggleMenu(event)">مقتبسات</a>
+          <a href="#quotes" onclick="toggleMenu(event)">مقتبسات</a>
           <ul>
             <li><a href="https://example.com/quotes/motivational">تحفيزية</a></li>
             <li><a href="https://example.com/quotes/love">عن الحب</a></li>
@@ -166,28 +198,57 @@
             <li><a href="https://example.com/quotes/wisdom">عن الحكمة</a></li>
           </ul>
         </li>
-        <li><a href="https://example.com/stories">قصص</a></li>
-        <li><a href="https://example.com/black-screen">مقتبسات شاشة سوداء</a></li>
+        <li><a href="#stories">قصص</a></li>
+        <li><a href="#black">مقتبسات شاشة سوداء</a></li>
       </ul>
     </nav>
   </header>
 
-  <div class="container">
-    <div class="card">
-      <h3>الاقتباسات</h3>
-      <p>مجموعة من الاقتباسات المختارة بعناية لتناسب كل الأذواق وتُلهمك في مختلف المواقف.</p>
-      <ul>
-        <li><a href="https://example.com/quotes/motivational">اقتباسات تحفيزية</a></li>
-        <li><a href="https://example.com/quotes/love">اقتباسات عن الحب</a></li>
-        <li><a href="https://example.com/quotes/life">اقتباسات عن الحياة</a></li>
-        <li><a href="https://example.com/quotes/success">اقتباسات عن النجاح</a></li>
-        <li><a href="https://example.com/quotes/hope">اقتباسات عن الأمل</a></li>
-        <li><a href="https://example.com/quotes/friendship">اقتباسات عن الصداقة</a></li>
-        <li><a href="https://example.com/quotes/patience">اقتباسات عن الصبر</a></li>
-        <li><a href="https://example.com/quotes/wisdom">اقتباسات عن الحكمة</a></li>
-      </ul>
+  <section id="home">
+    <div class="container">
+      <div class="card">
+        <h3>مرحبا بكم في طاقة إيجابية</h3>
+        <p>هذه الصفحة تحتوي على مجموعة متنوعة من الاقتباسات الملهمة، والقصص التحفيزية والمؤثرة، لتمنحكم طاقة إيجابية كل يوم.</p>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <section id="quotes">
+    <div class="container">
+      <div class="card">
+        <h3>الاقتباسات</h3>
+        <p>مجموعة من الاقتباسات المختارة بعناية لتناسب كل الأذواق وتُلهمك في مختلف المواقف.</p>
+        <ul>
+          <li><a href="https://example.com/quotes/motivational">اقتباسات تحفيزية</a></li>
+          <li><a href="https://example.com/quotes/love">اقتباسات عن الحب</a></li>
+          <li><a href="https://example.com/quotes/life">اقتباسات عن الحياة</a></li>
+          <li><a href="https://example.com/quotes/success">اقتباسات عن النجاح</a></li>
+          <li><a href="https://example.com/quotes/hope">اقتباسات عن الأمل</a></li>
+          <li><a href="https://example.com/quotes/friendship">اقتباسات عن الصداقة</a></li>
+          <li><a href="https://example.com/quotes/patience">اقتباسات عن الصبر</a></li>
+          <li><a href="https://example.com/quotes/wisdom">اقتباسات عن الحكمة</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="stories">
+    <div class="container">
+      <div class="card">
+        <h3>قصص ملهمة</h3>
+        <p>قصص حقيقية وتحفيزية تساعدك على التفكير الإيجابي والنهوض من جديد.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="black">
+    <div class="container">
+      <div class="card">
+        <h3>مقتبسات شاشة سوداء</h3>
+        <p>اقتباسات بتصميم الشاشة السوداء، مثالية للمشاركة في وسائل التواصل.</p>
+      </div>
+    </div>
+  </section>
 
   <footer>
     &copy; 2025 طاقة إيجابية - جميع الحقوق محفوظة
@@ -207,14 +268,21 @@
       }
     });
 
-    // Highlight current page manually based on text or URL (if needed)
-    const links = document.querySelectorAll('nav ul li a');
-    links.forEach(link => {
-      if (link.classList.contains('active')) return;
-      if (window.location.href.includes(link.href)) {
-        link.classList.add('active');
-      }
-    });
+    // Highlight active nav link
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav a");
+
+    window.addEventListener("hashchange", highlightActive);
+    window.addEventListener("load", highlightActive);
+
+    function highlightActive() {
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === location.hash) {
+          link.classList.add("active");
+        }
+      });
+    }
   </script>
 </body>
 </html>
