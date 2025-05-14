@@ -17,8 +17,6 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(to bottom right, #fffbea, #e0f7fa);
       color: #333;
-      display: flex;
-      flex-direction: column;
       min-height: 100vh;
     }
 
@@ -94,7 +92,6 @@
     }
 
     .container {
-      flex: 1;
       padding: 40px;
       display: flex;
       flex-direction: column;
@@ -260,102 +257,10 @@
     <div class="container">
       <div class="card">
         <h3>مرحبا بكم في طاقة إيجابية</h3>
-        <p>هذه الصفحة تحتوي على مجموعة متنوعة من الاقتباسات الملهمة، والقصص التحفيزية والمؤثرة، لتمنحكم طاقة إيجابية كل يوم.</p>
+        <p>هذه الصفحة هي وجهتك الأولى لاكتساب دفعة من الإلهام. اكتشف الاقتباسات المؤثرة والقصص التحفيزية التي تمنحك طاقة إيجابية وتغير نظرتك للحياة.</p>
       </div>
     </div>
   </section>
 
-  <section id="quotes">
-    <div class="container">
-      <div class="card">
-        <h3>الاقتباسات</h3>
-        <p>مجموعة من الاقتباسات المختارة بعناية لتناسب كل الأذواق وتُلهمك في مختلف المواقف.</p>
-        <ul>
-          <li><a href="https://example.com/quotes/motivational">اقتباسات تحفيزية</a></li>
-          <li><a href="https://example.com/quotes/love">اقتباسات عن الحب</a></li>
-          <li><a href="https://example.com/quotes/life">اقتباسات عن الحياة</a></li>
-          <li><a href="https://example.com/quotes/success">اقتباسات عن النجاح</a></li>
-          <li><a href="https://example.com/quotes/hope">اقتباسات عن الأمل</a></li>
-          <li><a href="https://example.com/quotes/friendship">اقتباسات عن الصداقة</a></li>
-          <li><a href="https://example.com/quotes/patience">اقتباسات عن الصبر</a></li>
-          <li><a href="https://example.com/quotes/wisdom">اقتباسات عن الحكمة</a></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="stories">
-    <div class="container">
-      <div class="card">
-        <h3>قصص ملهمة</h3>
-        <p>قصص حقيقية وتحفيزية تساعدك على التفكير الإيجابي والنهوض من جديد.</p>
-
-        <div class="comment-section">
-          <h4>شاركنا رأيك أو تعليقك</h4>
-          <form id="commentForm">
-            <textarea id="commentInput" placeholder="اكتب تعليقك هنا..." required></textarea>
-            <button type="submit">إرسال</button>
-          </form>
-          <ul id="commentList"></ul>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="black">
-    <div class="container">
-      <div class="card">
-        <h3>مقتبسات شاشة سوداء</h3>
-        <p>اقتباسات بتصميم الشاشة السوداء، مثالية للمشاركة في وسائل التواصل.</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2025 طاقة إيجابية - جميع الحقوق محفوظة
-  </footer>
-
-  <script>
-    function toggleMenu(event) {
-      event.preventDefault();
-      const menu = document.getElementById('quotesMenu');
-      menu.classList.toggle('show');
-    }
-
-    window.addEventListener('click', function(e) {
-      const menu = document.getElementById('quotesMenu');
-      if (!menu.contains(e.target)) {
-        menu.classList.remove('show');
-      }
-    });
-
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll("nav a");
-
-    window.addEventListener("hashchange", highlightActive);
-    window.addEventListener("load", highlightActive);
-
-    function highlightActive() {
-      navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === location.hash) {
-          link.classList.add("active");
-        }
-      });
-    }
-
-    document.getElementById("commentForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const input = document.getElementById("commentInput");
-      const text = input.value.trim();
-      if (text) {
-        const li = document.createElement("li");
-        li.textContent = text;
-        document.getElementById("commentList").appendChild(li);
-        input.value = "";
-      }
-    });
-  </script>
 </body>
 </html>
