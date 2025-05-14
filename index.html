@@ -15,7 +15,7 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom right, #fffbea, #e0f7fa);
+      background: linear-gradient(to bottom right, #ffcc80, #80deea);
       color: #333;
       display: flex;
       flex-direction: column;
@@ -24,11 +24,12 @@
 
     header {
       background-color: #fff;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 15px 0;
     }
 
     nav {
-      background-color: #333;
+      background-color: #444;
       width: 100%;
       position: sticky;
       top: 0;
@@ -37,29 +38,30 @@
 
     nav ul {
       display: flex;
-      justify-content: flex-start;
+      justify-content: center;
       list-style: none;
-      padding: 15px 30px;
+      padding: 10px 0;
       margin: 0;
     }
 
     nav ul li {
-      margin: 0 15px;
+      margin: 0 20px;
       position: relative;
     }
 
     nav ul li a {
       color: white;
       text-decoration: none;
-      font-size: 1.2em;
+      font-size: 1.3em;
       transition: color 0.3s, background-color 0.3s;
       cursor: pointer;
-      padding: 5px 10px;
+      padding: 8px 15px;
       border-radius: 5px;
     }
 
     nav ul li a:hover {
-      color: #fdd835;
+      background-color: #ff5722;
+      color: #fff;
     }
 
     nav ul li a.active {
@@ -67,68 +69,79 @@
       color: white;
     }
 
-    nav ul li ul {
-      display: none;
-      position: absolute;
-      background-color: #444;
-      padding: 10px;
-      list-style: none;
-      margin-top: 10px;
-      border-radius: 8px;
-      min-width: 200px;
-      right: 0;
-    }
-
-    nav ul li.show ul {
-      display: block;
-    }
-
-    nav ul li ul li {
-      margin: 5px 0;
-    }
-
-    nav ul li ul li a {
-      font-size: 1em;
-      color: white;
-    }
-
-    nav ul li ul li a:hover {
-      color: #ffd600;
-    }
-
     .hero {
       text-align: center;
-      padding: 60px 20px 40px;
-      background: linear-gradient(to right, #fdfcfb, #e2d1c3);
+      padding: 80px 20px;
+      background: linear-gradient(to right, #fdfcfb, #f3e5f5);
+      border-bottom: 2px solid #eee;
     }
 
     .hero h1 {
-      font-size: 3.2em;
+      font-size: 3.5em;
       margin-bottom: 20px;
       color: #f57c00;
       font-weight: bold;
     }
 
     .hero p {
-      font-size: 1.3em;
+      font-size: 1.4em;
       max-width: 800px;
       margin: 0 auto;
       line-height: 1.8;
       color: #444;
+      margin-bottom: 30px;
     }
 
     section {
       padding: 60px 30px;
       text-align: center;
-      display: none; /* إخفاء جميع الأقسام بشكل افتراضي */
+      background-color: #fff;
+      margin: 20px auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 1100px;
     }
 
-    section.active {
-      display: block; /* إظهار القسم النشط */
+    section h2 {
+      font-size: 2.5em;
+      color: #ff5722;
+      margin-bottom: 20px;
+    }
+
+    .content-box {
+      background-color: #fff;
+      padding: 30px;
+      margin: 30px 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .content-box:hover {
+      transform: scale(1.03);
+    }
+
+    .content-box h3 {
+      color: #ff5722;
+      font-size: 1.8em;
+    }
+
+    .content-box p {
+      font-size: 1.2em;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .image-container img {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     footer {
-      background-color: #333;
+      background-color: #444;
       color: white;
       text-align: center;
       padding: 15px 0;
@@ -136,32 +149,9 @@
     }
 
     footer p {
-      font-size: 1.2em;
-    }
-
-    .content-box {
-      background-color: #fff;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .content-box h3 {
-      color: #ff5722;
-    }
-
-    .content-box p {
       font-size: 1.1em;
-      color: #555;
-      line-height: 1.6;
     }
 
-    .image-container img {
-      width: 100%;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
   </style>
 </head>
 <body>
@@ -191,10 +181,12 @@
   </header>
 
   <section id="home" class="active">
-    <h1>طاقة إيجابية</h1>
-    <p>
-      أهلاً بكم في "طاقة إيجابية" — منصتكم للإلهام اليومي، حيث تجدون مقتبسات راقية، أقوال مؤثرة، قصص واقعية، وحكم جاهزة للتصميم تُنير دربكم وتُحفزكم نحو الأفضل. نمنحكم محتوى يصنع الفرق.
-    </p>
+    <div class="hero">
+      <h1>طاقة إيجابية</h1>
+      <p>
+        أهلاً بكم في "طاقة إيجابية" — منصتكم للإلهام اليومي، حيث تجدون مقتبسات راقية، أقوال مؤثرة، قصص واقعية، وحكم جاهزة للتصميم تُنير دربكم وتُحفزكم نحو الأفضل.
+      </p>
+    </div>
 
     <!-- إضافة محتوى إضافي -->
     <div class="content-box">
@@ -246,50 +238,4 @@
   <script>
     function setActive(el) {
       const links = document.querySelectorAll('nav ul li a');
-      links.forEach(link => link.classList.remove('active'));
-      el.classList.add('active');
-    }
-
-    function toggleMenu(event) {
-      event.preventDefault();
-      const menu = document.getElementById('quotesMenu');
-      menu.classList.toggle('show');
-    }
-
-    function showSection(sectionId) {
-      const sections = document.querySelectorAll('section');
-      sections.forEach(section => section.classList.remove('active'));
-      const activeSection = document.getElementById(sectionId);
-      if (activeSection) {
-        activeSection.classList.add('active');
-      }
-    }
-
-    window.addEventListener('click', function(e) {
-      const menu = document.getElementById('quotesMenu');
-      if (!menu.contains(e.target)) {
-        menu.classList.remove('show');
-      }
-    });
-
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('nav ul li a');
-
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (scrollY >= sectionTop - 100) {
-          current = section.getAttribute('id');
-        }
-      });
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) {
-          link.classList.add('active');
-        }
-      });
-    });
-  </script>
-</body>
-</html>
+      links.for
