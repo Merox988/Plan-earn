@@ -82,6 +82,31 @@
     nav ul li.show ul {
       display: block;
     }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: linear-gradient(to right, #fdfcfb, #e2d1c3);
+    }
+
+    .hero h1 {
+      font-size: 3.2em;
+      margin-bottom: 20px;
+      color: #ff5722;
+      font-weight: bold;
+    }
+
+    .hero p {
+      font-size: 1.3em;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+      color: #444;
+    }
+
+    section {
+      padding: 60px 30px;
+    }
   </style>
 </head>
 <body>
@@ -89,39 +114,44 @@
     <nav>
       <ul>
         <li><a href="#home" onclick="setActive(this)">الرئيسية</a></li>
-        <li id="quotesMenu">
-          <a onclick="toggleMenu(event); setActive(this)">مقتبسات</a>
-          <ul>
-            <li><a href="https://example.com/quotes/motivational">تحفيزية</a></li>
-            <li><a href="https://example.com/quotes/love">عن الحب</a></li>
-            <li><a href="https://example.com/quotes/life">عن الحياة</a></li>
-            <li><a href="https://example.com/quotes/success">عن النجاح</a></li>
-            <li><a href="https://example.com/quotes/hope">عن الأمل</a></li>
-            <li><a href="https://example.com/quotes/friendship">عن الصداقة</a></li>
-            <li><a href="https://example.com/quotes/patience">عن الصبر</a></li>
-            <li><a href="https://example.com/quotes/wisdom">عن الحكمة</a></li>
-          </ul>
-        </li>
+        <li><a href="#quotes" onclick="setActive(this)">مقتبسات</a></li>
+        <li><a href="#sayings" onclick="setActive(this)">أقوال</a></li>
+        <li><a href="#wisdom" onclick="setActive(this)">حكم</a></li>
         <li><a href="https://example.com/stories">قصص</a></li>
         <li><a href="https://www.youtube.com/@%D9%85%D9%82%D8%AA%D8%A8%D8%B3%D8%A7%D8%AA.%D9%84%D8%AA%D8%B5%D9%85%D9%8A%D9%85">مقتبسات شاشة سوداء</a></li>
       </ul>
     </nav>
   </header>
 
-  <script>
-    function toggleMenu(event) {
-      event.preventDefault();
-      const menu = document.getElementById('quotesMenu');
-      menu.classList.toggle('show');
-    }
+  <section class="hero" id="home">
+    <h1>طاقة إيجابية</h1>
+    <p>
+      أهلاً بكم في "طاقة إيجابية" — منصتكم للإلهام اليومي، حيث تجدون مقتبسات راقية، أقوال مؤثرة، قصص واقعية، وحكم جاهزة للتصميم تُنير دربكم وتُحفزكم نحو الأفضل. نمنحكم محتوى يصنع الفرق.
+    </p>
+  </section>
 
+  <section id="quotes">
+    <h2>مقتبسات</h2>
+    <p>مجموعة من الاقتباسات الملهمة لتجدد طاقتك وتعزز من نظرتك الإيجابية للحياة.</p>
+  </section>
+
+  <section id="sayings">
+    <h2>أقوال</h2>
+    <p>أقوال من عظماء وأدباء تساعدك على الفهم العميق والتأمل.</p>
+  </section>
+
+  <section id="wisdom">
+    <h2>حكم</h2>
+    <p>حكم مختارة تنير طريقك وتلهم قراراتك.</p>
+  </section>
+
+  <script>
     function setActive(el) {
       const links = document.querySelectorAll('nav ul li a');
       links.forEach(link => link.classList.remove('active'));
       el.classList.add('active');
     }
 
-    // Highlight menu item on scroll
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav ul li a');
 
@@ -129,7 +159,7 @@
       let current = '';
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        if (scrollY >= sectionTop - 60) {
+        if (scrollY >= sectionTop - 100) {
           current = section.getAttribute('id');
         }
       });
@@ -139,13 +169,6 @@
           link.classList.add('active');
         }
       });
-    });
-
-    window.addEventListener('click', function (e) {
-      const menu = document.getElementById('quotesMenu');
-      if (!menu.contains(e.target)) {
-        menu.classList.remove('show');
-      }
     });
   </script>
 </body>
