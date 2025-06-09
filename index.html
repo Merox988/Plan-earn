@@ -1,241 +1,93 @@
-<head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6725783366360520"
-     crossorigin="anonymous"></script>
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>طاقة إيجابية</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="اقتباسات تحفيزية ملهمة تمنحك الطاقة والإيجابية لتحقيق أهدافك.">
+  <meta name="keywords" content="اقتباسات تحفيزية, إلهام, طاقة إيجابية, نغم, تطوير الذات, نجاح">
+  <meta name="author" content="نغم">
+  <title>اقتباسات تحفيزية | طاقة إيجابية</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
-      margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom right, #ffcc80, #80deea);
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    header {
-      background-color: #fff;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      padding: 15px 0;
-    }
-
-    nav {
-      background-color: #444;
-      width: 100%;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      padding: 10px 0;
+      background: #fefefe;
       margin: 0;
+      padding: 0;
+      color: #333;
     }
-
-    nav ul li {
-      margin: 0 20px;
-      position: relative;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.3em;
-      transition: color 0.3s, background-color 0.3s;
-      cursor: pointer;
-      padding: 8px 15px;
-      border-radius: 5px;
-    }
-
-    nav ul li a:hover {
-      background-color: #ff5722;
-      color: #fff;
-    }
-
-    nav ul li a.active {
-      background-color: #ff9800;
-      color: white;
-    }
-
-    .hero {
+    header, footer {
+      background: #fff;
       text-align: center;
-      padding: 80px 20px;
-      background: linear-gradient(to right, #fdfcfb, #f3e5f5);
-      border-bottom: 2px solid #eee;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-
-    .hero h1 {
-      font-size: 3.5em;
-      margin-bottom: 20px;
-      color: #f57c00;
+    .section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .section h2 {
+      color: #2e7d32;
+      border-bottom: 2px solid #81c784;
+      padding-bottom: 10px;
+    }
+    .quote {
+      background: #fff;
+      border-right: 5px solid #66bb6a;
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .quote p {
+      margin: 0;
+      font-size: 1.2em;
+    }
+    .quote small {
+      display: block;
+      margin-top: 10px;
+      color: #777;
+    }
+    a.back-link {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      color: #00796b;
       font-weight: bold;
     }
-
-    .hero p {
-      font-size: 1.4em;
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.8;
-      color: #444;
-      margin-bottom: 30px;
-    }
-
-    section {
-      padding: 60px 30px;
-      text-align: center;
-      background-color: #fff;
-      margin: 20px auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      width: 90%;
-      max-width: 1100px;
-    }
-
-    section h2 {
-      font-size: 2.5em;
-      color: #ff5722;
-      margin-bottom: 20px;
-    }
-
-    .content-box {
-      background-color: #fff;
-      padding: 30px;
-      margin: 30px 0;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s;
-    }
-
-    .content-box:hover {
-      transform: scale(1.03);
-    }
-
-    .content-box h3 {
-      color: #ff5722;
-      font-size: 1.8em;
-    }
-
-    .content-box p {
-      font-size: 1.2em;
-      color: #666;
-      line-height: 1.6;
-    }
-
-    .image-container img {
-      width: 100%;
-      border-radius: 8px;
-      margin-top: 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    footer {
-      background-color: #444;
-      color: white;
-      text-align: center;
-      padding: 15px 0;
-      margin-top: auto;
-    }
-
-    footer p {
-      font-size: 1.1em;
-    }
-
   </style>
 </head>
 <body>
   <header>
-    <nav>
-      <ul>
-        <li><a href="#home" onclick="showSection('home'); setActive(this)">الرئيسية</a></li>
-        <li id="quotesMenu">
-          <a href="#quotes" onclick="toggleMenu(event); setActive(this)">مقتبسات</a>
-          <ul>
-            <li><a href="https://example.com/quotes/motivational" onclick="showSection('quotes')">تحفيزية</a></li>
-            <li><a href="https://example.com/quotes/love" onclick="showSection('quotes')">عن الحب</a></li>
-            <li><a href="https://example.com/quotes/life" onclick="showSection('quotes')">عن الحياة</a></li>
-            <li><a href="https://example.com/quotes/success" onclick="showSection('quotes')">عن النجاح</a></li>
-            <li><a href="https://example.com/quotes/hope" onclick="showSection('quotes')">عن الأمل</a></li>
-            <li><a href="https://example.com/quotes/friendship" onclick="showSection('quotes')">عن الصداقة</a></li>
-            <li><a href="https://example.com/quotes/patience" onclick="showSection('quotes')">عن الصبر</a></li>
-            <li><a href="https://example.com/quotes/wisdom" onclick="showSection('quotes')">عن الحكمة</a></li>
-          </ul>
-        </li>
-        <li><a href="#sayings" onclick="showSection('sayings'); setActive(this)">أقوال</a></li>
-        <li><a href="#wisdom" onclick="showSection('wisdom'); setActive(this)">حكم</a></li>
-        <li><a href="https://example.com/stories">قصص</a></li>
-        <li><a href="https://www.youtube.com/@%D9%85%D9%82%D8%AA%D8%A8%D8%B3%D8%A7%D9%84%D8%A7%D9%8A%D9%87">مقتبسات شاشة سوداء</a></li>
-      </ul>
-    </nav>
+    <h1>اقتباسات تحفيزية</h1>
+    <p>كلمات تعيد إليك الشغف والطموح والإيجابية</p>
   </header>
 
-  <section id="home" class="active">
-    <div class="hero">
-      <h1>طاقة إيجابية</h1>
-      <p>
-        أهلاً بكم في "طاقة إيجابية" — منصتكم للإلهام اليومي، حيث تجدون مقتبسات راقية، أقوال مؤثرة، قصص واقعية، وحكم جاهزة للتصميم تُنير دربكم وتُحفزكم نحو الأفضل.
-      </p>
+  <section class="section">
+    <h2>مجموعة من الاقتباسات التحفيزية</h2>
+
+    <div class="quote">
+      <p>الناجحون لا ينتظرون الفرص، بل يصنعونها.</p>
+      <small>– مجهول</small>
+    </div>
+    <div class="quote">
+      <p>النجاح هو الانتقال من فشل إلى فشل دون أن تفقد الحماس.</p>
+      <small>– ونستون تشرشل</small>
+    </div>
+    <div class="quote">
+      <p>ابدأ الآن. لا تنتظر حتى تصبح الأمور مثالية.</p>
+      <small>– مجهول</small>
+    </div>
+    <div class="quote">
+      <p>كل تحدٍ هو فرصة مقنعة للنجاح.</p>
+      <small>– نغم</small>
     </div>
 
-    <!-- إضافة محتوى إضافي -->
-    <div class="content-box">
-      <h3>قصص ملهمة</h3>
-      <p>
-        اقرأوا القصص الواقعية التي تلهمكم وتدفعكم لتحقيق أهدافكم. كل قصة تروي تجربة عميقة ومؤثرة ستساعدكم على التقدم في حياتكم الشخصية والمهنية.
-      </p>
-    </div>
-
-    <div class="content-box">
-      <h3>اقتباس اليوم</h3>
-      <p>
-        "النجاح ليس النهاية والفشل ليس قاتلاً، إنما الشجاعة للاستمرار هي ما يُهم." — ونستون تشرشل
-      </p>
-    </div>
-
-    <div class="image-container">
-      <img src="https://via.placeholder.com/1200x600" alt="إلهام" />
-    </div>
-
-    <div class="content-box">
-      <h3>مقاطع فيديو تحفيزية</h3>
-      <p>
-        تابعوا مقاطع الفيديو التي ستساعدكم على رفع معنوياتكم وتحقيق أفضل نسخة من أنفسكم.
-      </p>
-      <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">شاهد الفيديو</a>
-    </div>
-  </section>
-
-  <section id="quotes">
-    <h2>مقتبسات</h2>
-    <p>مجموعة من الاقتباسات الملهمة لتجدد طاقتك وتعزز من نظرتك الإيجابية للحياة.</p>
-  </section>
-
-  <section id="sayings">
-    <h2>أقوال</h2>
-    <p>أقوال من عظماء وأدباء تساعدك على الفهم العميق والتأمل.</p>
-  </section>
-
-  <section id="wisdom">
-    <h2>حكم</h2>
-    <p>حكم مختارة تنير طريقك وتلهم قراراتك.</p>
+    <a href="quotes.html" class="back-link">← العودة إلى صفحة الاقتباسات الرئيسية</a>
   </section>
 
   <footer>
-    <p>&copy; 2025 جميع الحقوق محفوظة | طاقة إيجابية</p>
+    &copy; 2025 طاقة إيجابية - جميع الحقوق محفوظة
   </footer>
-
-  <script>
-    function setActive(el) {
-      const links = document.querySelectorAll('nav ul li a');
-      links.for
+</body>
+</html>
